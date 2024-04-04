@@ -1,0 +1,33 @@
+:root {
+    --cor1: rgb(150, 140, 214);
+    --cor2: white;
+    --cor3: rgba(34, 34, 34, 0.799);
+}
+
+.container {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 400px;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    background-color: var(--cor1);
+    color: var(--cor2);
+}
+
+.container-dois {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 400px;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    background-color: var(--cor1);
+    color: var(--cor2);
+}
