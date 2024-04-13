@@ -1,0 +1,53 @@
+:root {
+    --cor1: black;
+    --cor2: rgba(129, 129, 129, 0.819);
+    --cor3: rgba(82, 153, 82, 0.884);
+    --cor4: rgb(228, 228, 228);
+}
+
+.title {
+    font-family: sans-serif;
+    text-align: center;
+    padding: 5px;
+    color: var(--cor4);
+}
+
+.container-text {
+    font-family: sans-serif;
+    color: var(--cor4);
+    text-align: left;
+    padding: 10px;
+}
+
+.container-card {
+    display: grid;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 40px;
+    padding: 20px;
+    left: 50%;
+    width: 80vh;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    background-color: var(--cor1);
+}
+
+.btn {
+    height: 40px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--cor3);
+    color: var(--cor4);
+    cursor: pointer;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.entrada {
+    background-color: var(--cor2);
+    border-radius: 5px;
+    border: none;
+    width: 400px;
+    padding: 10px;
+}
