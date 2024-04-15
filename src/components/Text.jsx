@@ -14,10 +14,10 @@ export function Text() {
 
 
           if (!isNaN(num1) && !isNaN(num2)) {
-            const resultadoMedia = (num1 + num2) / 2;
-            setMedia(resultadoMedia);
+            const resultadoMedia = (num1 + num2) / 2 >= 7;
+            setMedia(`Aprovado ${resultadoMedia}`);
           } else {
-            setMedia(null);
+            setMedia(`Reprovado ${resultadoMedia}`);
           }
         };
 
@@ -52,12 +52,16 @@ export function Text() {
             <button className="btn" onClick={calcularMedia}>Calcular</button>
 
             <div className="container-text">
-                <label>Média Final: </label>
+                <label>Média Final do Aluno(a): </label>
+                {nome}
                 <input type="text"
                 value={media}
                 onChange={(event) => setMedia(event.target.value)}
                 id="notadois" 
                 className='entrada'/>
+            </div>
+            <div>
+                <p>{media}</p>
             </div>
         </div> 
     );
