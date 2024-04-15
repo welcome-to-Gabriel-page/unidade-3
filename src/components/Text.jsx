@@ -3,9 +3,9 @@ import { useState } from 'react';
 
 export function Text() {
         const [nome, setNome] = useState(' ');
-        const [nota1, setNota1] = useState(0);
-        const [nota2, setNota2] = useState(0);
-        const [media, setMedia] = useState(0);
+        const [nota1, setNota1] = useState();
+        const [nota2, setNota2] = useState();
+        const [media, setMedia] = useState(null);
       
         const calcularMedia = () => {
 
@@ -14,14 +14,15 @@ export function Text() {
           const mediNotas = parseFloat(media);
 
 
-          if (!isNaN(num1) && !isNaN(num2)) {
+          if (isNaN(num1) && isNaN(num2)) {
+            const erro = "ERRO, digite um número válido";
+            setMedia(erro);
+        } else {
             const resultadoMedia = (num1 + num2) / 2;
-            const resAluno = resultadoMedia >= 7 ? 'Aprovado' : 'Reprovado'
+            const resAluno = resultadoMedia >= 7 ? 'Aprovado' : "Reprovado";
             setMedia(`Sua nota é: ${resultadoMedia}, você foi ${resAluno}!`);
-          } else {
-            console.log('Reprovado!');
-          }
-        };
+        }
+    };
 
     return(
         <div>
@@ -32,7 +33,8 @@ export function Text() {
                 value={nome}
                 onChange={(event) => setNome(event.target.value)}
                 id="name"
-                className='entrada'/>
+                className='entrada'
+                required/>
             </div>
             <div className="container-text">
                 <label htmlFor="notaum">Nota 1: </label>
@@ -40,7 +42,8 @@ export function Text() {
                 value={nota1}
                 onChange={(event) => setNota1(event.target.value)}
                 id="notaum"
-                className='entrada'/>
+                className='entrada'
+                required/>
             </div>
             <div className="container-text">
                 <label htmlFor="notadois">Nota 2: </label>
@@ -48,7 +51,8 @@ export function Text() {
                 value={nota2}
                 onChange={(event) => setNota2(event.target.value)}
                 id="notadois" 
-                className='entrada'/>
+                className='entrada'
+                required/>
             </div>
 
             <button className="btn" onClick={calcularMedia}>Calcular</button>
@@ -60,7 +64,8 @@ export function Text() {
                 value={media}
                 onChange={(event) => setMedia(event.target.value)}
                 id="notadois" 
-                className='entrada'/>
+                className='entrada'
+                />
             </div>
         </div> 
     );
