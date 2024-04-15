@@ -5,19 +5,21 @@ export function Text() {
         const [nome, setNome] = useState(' ');
         const [nota1, setNota1] = useState(0);
         const [nota2, setNota2] = useState(0);
-        const [media, setMedia] = useState(null);
+        const [media, setMedia] = useState(0);
       
         const calcularMedia = () => {
 
           const num1 = parseFloat(nota1);
           const num2 = parseFloat(nota2);
+          const mediNotas = parseFloat(media);
 
 
           if (!isNaN(num1) && !isNaN(num2)) {
-            const resultadoMedia = (num1 + num2) / 2 >= 7;
-            setMedia(`Aprovado ${resultadoMedia}`);
+            const resultadoMedia = (num1 + num2) / 2;
+            const resAluno = resultadoMedia >= 7 ? 'Aprovado' : 'Reprovado'
+            setMedia(`Sua nota é: ${resultadoMedia}, você foi ${resAluno}!`);
           } else {
-            setMedia(`Reprovado ${resultadoMedia}`);
+            console.log('Reprovado!');
           }
         };
 
@@ -59,9 +61,6 @@ export function Text() {
                 onChange={(event) => setMedia(event.target.value)}
                 id="notadois" 
                 className='entrada'/>
-            </div>
-            <div>
-                <p>{media}</p>
             </div>
         </div> 
     );
